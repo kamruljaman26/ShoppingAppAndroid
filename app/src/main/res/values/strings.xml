@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ShoppingAppAndroid</string>
+    <string name="view_pager_description">Swipe left or right to switch between tabs</string>
+
+    <string name="app_description">Online Shopping BD has never been easier. Daraz.com.bd is best
+        online shopping store in Bangladesh that features 10+ million products at affordable prices.
+        As bangaldesh\'s online shopping landscape is expanding every year, online shopping in dhaka,
+        chittagong, khulna, sylhet and other big cities are also gaining momentum. Daraz is among best
+        websites for online shopping in bangladesh that promises fast, reliable and convenient delivery
+        of products to your doorstep. Daraz being the trusted online shop in Bangladesh aims to provide a
+        trouble-free shopping experience for the people of Bangladesh but is also providing ample opportunity
+        for international online shopping from Bangladesh. Daraz aims to make online
+        shopping accessible to all parts of the country.
+    </string>
+
+    <string name="footer_copyright">© Standard Building Care Technology Ltd 2023</string>
+    <string name="app_title">Standard Admixture</string>
 </resources>

@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.viewPagerId);
 
         // init tab names
-        tabLayout.addTab(tabLayout.newTab().setText("Tab1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Cricket"));
-        tabLayout.addTab(tabLayout.newTab().setText("NBA"));
+        tabLayout.addTab(tabLayout.newTab().setText("Home"));
+        tabLayout.addTab(tabLayout.newTab().setText("Items"));
+        tabLayout.addTab(tabLayout.newTab().setText("Checkout"));
 
         // init and set tab page adapter
         TabPageAdapter adapter = new TabPageAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
