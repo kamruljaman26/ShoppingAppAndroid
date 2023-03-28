@@ -15,4 +15,5 @@
 
     <string name="footer_copyright">© Standard Electronics Ltd 2023</string>
     <string name="app_title">Standard Electronic</string>
+    <string name="thank_you_message">Thank you for registering!\nCheckout not yet functional!</string>
 </resources>

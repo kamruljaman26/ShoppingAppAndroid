@@ -9,18 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shopping.app.R;
-import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.activity.RegisterActivity;
 import com.shopping.app.adapder.CartItemsRecyclerAdapter;
-import com.shopping.app.adapder.ItemsRecyclerAdapter;
 import com.shopping.app.dao.CartDAO;
-import com.shopping.app.dao.ItemsDAO;
-
 import java.util.concurrent.atomic.AtomicReference;
 
 public class CartFragment extends Fragment {

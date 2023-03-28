@@ -3,6 +3,7 @@ package com.shopping.app.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.shopping.app.R;
@@ -93,9 +94,10 @@ public class RegisterActivity extends AppCompatActivity {
         // Save user information
         user = new User(name, phone, email);
 
-        // Display success message and finish activity
+        // Display success message and move to thank you activity
         showToast("Registration successful");
-        finish();
+        Intent intent = new Intent(getApplicationContext(), ThankYouActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -105,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     // update saved data in filed
-    private void updateUserData(){
+    private void updateUserData() {
         if (user != null) {
             mNameEditText.setText(user.getName());
             mEmailEditText.setText(user.getEmail());
