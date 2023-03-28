@@ -47,6 +47,7 @@ public class CartFragment extends Fragment {
     }
 
     private void updateTotal(){
+
         // calculate cart total
         AtomicReference<Double> total = new AtomicReference<>((double) 0);
         new CartDAO().getAll().forEach(c -> {

@@ -47,7 +47,6 @@ public class ItemSliderActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
         viewPager.setCurrentItem(selectedPosition);
 
-
         // Add a PageChangeListener to the ViewPager for swipe left and right functionality
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
