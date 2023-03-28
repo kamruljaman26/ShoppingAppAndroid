@@ -1,5 +1,6 @@
 package com.shopping.app.adapder;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shopping.app.R;
+import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.model.Item;
 
 import java.util.List;
@@ -74,6 +76,7 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdap
         private final ImageView itemImage;
         private final TextView itemTitle;
         private final TextView itemPrice;
+        private Intent intent;
 
         public ItemsViewHolder(@NonNull View view) {
             super(view);
@@ -82,6 +85,8 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdap
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), "Item clicked: " + itemTitle.getText(), Toast.LENGTH_SHORT).show();
+                    intent = new Intent(view.getContext(), ItemSliderActivity.class);
+                    view.getContext().startActivity(intent);
                 }
             });
             itemImage = view.findViewById(R.id.item_image_id);
@@ -94,6 +99,7 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdap
             itemImage.setImageResource(R.drawable.macbook_pro);
             itemTitle.setText(item.getTitle());
             itemPrice.setText("Price: $" + item.getPrice());
+            intent.putExtra("position", item.getId());
         }
     }
 
