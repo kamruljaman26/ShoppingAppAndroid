@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="End of Line!"
+            android:text="end of results!"
             android:textSize="18sp"
             android:textStyle="bold" />
 

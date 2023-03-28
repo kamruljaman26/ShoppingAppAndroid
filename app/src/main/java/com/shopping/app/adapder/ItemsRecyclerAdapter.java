@@ -1,6 +1,5 @@
 package com.shopping.app.adapder;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +15,13 @@ import com.shopping.app.model.Item;
 
 import java.util.List;
 
-public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder> {
+public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdapter.ItemsViewHolder> {
 
     private static final int VIEW_TYPE_1 = 1;
     private static final int VIEW_TYPE_2 = 2;
     private final List<Item> items;
 
-    public ItemsAdapter(List<Item> items) {
+    public ItemsRecyclerAdapter(List<Item> items) {
         this.items = items;
     }
 

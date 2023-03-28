@@ -1,4 +1,4 @@
-package com.shopping.app;
+package com.shopping.app.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
+import com.shopping.app.R;
 import com.shopping.app.adapder.TabPageAdapter;
 
 public class MainActivity extends AppCompatActivity {
