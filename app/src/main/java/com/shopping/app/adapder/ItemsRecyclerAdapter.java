@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.shopping.app.R;
 import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.model.Item;
+import com.shopping.app.util.Util;
+
 import java.util.List;
 
 public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdapter.ItemsViewHolder> {
@@ -86,7 +88,7 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdap
 
         public void bindData(Item item) {
             // Set data for each item view in the RecyclerView
-            itemImage.setImageResource(R.drawable.macbook_pro);
+            itemImage.setImageResource(Util.nameToDrawable(item.getImage(),view.getContext()));
             itemTitle.setText(item.getTitle());
             itemPrice.setText("Price: $" + item.getPrice());
 

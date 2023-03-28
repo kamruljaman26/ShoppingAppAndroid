@@ -15,6 +15,7 @@ import com.shopping.app.R;
 import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.dao.ItemsDAO;
 import com.shopping.app.model.Item;
+import com.shopping.app.util.Util;
 
 public class HomeFragment extends Fragment {
 
@@ -35,7 +36,7 @@ public class HomeFragment extends Fragment {
         TextView item1Title = view.findViewById(R.id.item1_title_id);
         TextView item1Price = view.findViewById(R.id.item1_price_id);
 
-        item1Img.setImageResource(R.drawable.macbook_pro);
+        item1Img.setImageResource(Util.nameToDrawable(item1.getImage(),view.getContext()));
         item1Title.setText(item1.getTitle());
         item1Price.setText("Price: $" + String.format("%.2f", item1.getPrice()));
 
@@ -51,7 +52,7 @@ public class HomeFragment extends Fragment {
         TextView item2Title = view.findViewById(R.id.item2_title_id);
         TextView item2Price = view.findViewById(R.id.item2_price_id);
 
-        item2Img.setImageResource(R.drawable.macbook_pro);
+        item2Img.setImageResource(Util.nameToDrawable(item2.getImage(),view.getContext()));
         item2Title.setText(item2.getTitle());
         item2Price.setText("Price: $" + String.format("%.2f", item2.getPrice()));
 
@@ -60,11 +61,6 @@ public class HomeFragment extends Fragment {
             intent.putExtra("position", item2.getId() - 1);
             view.getContext().startActivity(intent);
         });
-
-/*        Intent intent = new Intent(view.getContext(), ItemSliderActivity.class);
-        intent.putExtra("position", item.getId() - 1);
-        view.getContext().startActivity(intent);*/
-
 
         return view;
     }

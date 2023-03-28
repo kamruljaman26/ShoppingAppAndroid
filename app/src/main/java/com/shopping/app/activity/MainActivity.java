@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // init tab layout
         TabLayout tabLayout = findViewById(R.id.tabLayoutId);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         // init view pager
         ViewPager viewPager = findViewById(R.id.viewPagerId);
 
-        // init tab names
+        // Init tab names
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Items"));
         tabLayout.addTab(tabLayout.newTab().setText("Cart"));
@@ -34,11 +33,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        /*
-         * The code you posted is used to sync the TabLayout with the ViewPager so that
-         * when a user clicks on a tab, the corresponding page in the ViewPager is displayed.
-         * Here's what each part of the code does:
-         */
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -52,6 +46,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

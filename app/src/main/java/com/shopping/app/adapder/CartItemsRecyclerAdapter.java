@@ -15,6 +15,7 @@ import com.shopping.app.R;
 import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.model.CartItem;
 import com.shopping.app.model.Item;
+import com.shopping.app.util.Util;
 
 import java.util.List;
 
@@ -81,14 +82,14 @@ public class CartItemsRecyclerAdapter extends RecyclerView.Adapter<CartItemsRecy
 
         public void bindData(CartItem item) {
             // Set data for each item view in the RecyclerView
-            itemImage.setImageResource(R.drawable.macbook_pro);
+            itemImage.setImageResource(Util.nameToDrawable(item.getItem().getImage(), view.getContext()));
             itemTitle.setText(item.getItem().getTitle());
             itemPrice.setText("Price: $" + item.getItem().getPrice());
 
             // set button handler
             view.setOnClickListener(v -> {
                 Intent intent = new Intent(view.getContext(), ItemSliderActivity.class);
-                intent.putExtra("position", item.getItem().getId());
+                intent.putExtra("position", item.getItem().getId() - 1);
                 view.getContext().startActivity(intent);
             });
         }

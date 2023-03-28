@@ -7,11 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.shopping.app.R;
 import com.shopping.app.dao.ItemsDAO;
 import com.shopping.app.fragments.PagerItemFragment;
@@ -39,9 +37,7 @@ public class ItemSliderActivity extends AppCompatActivity {
         List<Item> itemList = itemsDAO.getAll();
         int selectedPosition = getIntent().getIntExtra("position", 0);
 
-//        Toast.makeText(getApplicationContext(), "Item clicked: " + itemList.get(selectedPosition).getTitle(), Toast.LENGTH_SHORT).show();
-
-        // Set up the ViewPager with the custom PagerAdapter
+        // Set up the ViewPager with custom PagerAdapter
         ViewPager viewPager = findViewById(R.id.viewPager);
         ItemPagerAdapter pagerAdapter = new ItemPagerAdapter(getSupportFragmentManager(), itemList);
         viewPager.setAdapter(pagerAdapter);
