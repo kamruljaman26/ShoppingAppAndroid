@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         item1Title.setText(item1.getTitle());
         item1Price.setText("Price: $" + String.format("%.2f", item1.getPrice()));
 
-        cardView1.setOnClickListener(e->{
+        cardView1.setOnClickListener(e -> {
             Intent intent = new Intent(view.getContext(), ItemSliderActivity.class);
             intent.putExtra("position", item1.getId() - 1);
             view.getContext().startActivity(intent);
@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
         item2Title.setText(item2.getTitle());
         item2Price.setText("Price: $" + String.format("%.2f", item2.getPrice()));
 
-        cardView2.setOnClickListener(e->{
+        cardView2.setOnClickListener(e -> {
             Intent intent = new Intent(view.getContext(), ItemSliderActivity.class);
             intent.putExtra("position", item2.getId() - 1);
             view.getContext().startActivity(intent);
@@ -64,7 +64,6 @@ public class HomeFragment extends Fragment {
 /*        Intent intent = new Intent(view.getContext(), ItemSliderActivity.class);
         intent.putExtra("position", item.getId() - 1);
         view.getContext().startActivity(intent);*/
-
 
 
         return view;

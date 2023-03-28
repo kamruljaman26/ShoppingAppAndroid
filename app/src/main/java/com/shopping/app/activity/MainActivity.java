@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // init tab names
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Items"));
-        tabLayout.addTab(tabLayout.newTab().setText("Checkout"));
+        tabLayout.addTab(tabLayout.newTab().setText("Cart"));
 
         // init and set tab page adapter
         TabPageAdapter adapter = new TabPageAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());

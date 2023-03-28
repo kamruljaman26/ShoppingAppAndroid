@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.shopping.app.fragments.HomeFragment;
 import com.shopping.app.fragments.ItemsFragment;
-import com.shopping.app.fragments.CheckoutFragment;
+import com.shopping.app.fragments.CartFragment;
 
 public class TabPageAdapter extends FragmentPagerAdapter {
     private Context context;
@@ -30,7 +30,7 @@ public class TabPageAdapter extends FragmentPagerAdapter {
             case 1:
                 return new ItemsFragment();
             case 2:
-                return new CheckoutFragment();
+                return new CartFragment();
             default:
                 return null;
         }
