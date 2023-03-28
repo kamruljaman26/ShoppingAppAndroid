@@ -2,7 +2,7 @@ package com.shopping.app.model;
 
 import java.util.Objects;
 
-public class Items {
+public class Item {
 
     private int id;
     private String title;
@@ -10,7 +10,7 @@ public class Items {
     private double price;
     private String description;
 
-    public Items(int id, String title, String image, double price, String description) {
+    public Item(int id, String title, String image, double price, String description) {
         this.id = id;
         this.title = title;
         this.image = image;
@@ -62,8 +62,8 @@ public class Items {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Items items = (Items) o;
-        return id == items.id;
+        Item item = (Item) o;
+        return id == item.id;
     }
 
     @Override
