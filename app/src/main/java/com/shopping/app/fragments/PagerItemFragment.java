@@ -54,7 +54,7 @@ public class PagerItemFragment extends Fragment {
         addToCartButton.setOnClickListener(v -> {
             CartItem cartItem = new CartItem(item, 1);
             new CartDAO().addOrUpdate(cartItem);
-            Toast.makeText(view.getContext(),"Added to cart", Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), "Added to cart", Toast.LENGTH_SHORT).show();
             int size = new CartDAO().getAll().size();
 //            Toast.makeText(view.getContext(), size + "", Toast.LENGTH_SHORT).show();
         });

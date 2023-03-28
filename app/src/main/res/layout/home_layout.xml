@@ -18,21 +18,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
+            android:id="@+id/item_1_layout"
             android:layout_width="match_parent"
-            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:padding="10dp">
+
             <ImageView
+                android:id="@+id/item1_image_id"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:src="@drawable/macbook_pro"
-                />
+                android:layout_height="100dp"
+                android:src="@drawable/macbook_pro" />
+
             <TextView
+                android:id="@+id/item1_title_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NVIDIA GeForce RTX 3080"
-                android:textStyle="bold"
-                />
+                android:text="Macbook Pro 2015"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item1_price_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price: $2000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
 
@@ -51,21 +66,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
+            android:id="@+id/item_2_layout"
             android:layout_width="match_parent"
-            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:padding="10dp">
+
             <ImageView
+                android:id="@+id/item2_image_id"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:src="@drawable/macbook_pro"
-                />
+                android:layout_height="100dp"
+                android:src="@drawable/macbook_pro" />
+
             <TextView
+                android:id="@+id/item2_title_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NVIDIA GeForce RTX 3080"
-                android:textStyle="bold"
-                />
+                android:text="Macbook Pro 2015"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item2_price_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price: $2000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
