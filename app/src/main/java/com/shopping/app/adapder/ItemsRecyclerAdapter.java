@@ -7,14 +7,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.shopping.app.R;
 import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.model.Item;
-
 import java.util.List;
 
 public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdapter.ItemsViewHolder> {
@@ -76,19 +73,12 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdap
         private final ImageView itemImage;
         private final TextView itemTitle;
         private final TextView itemPrice;
-        private Intent intent;
+        private final View view;
 
         public ItemsViewHolder(@NonNull View view) {
             super(view);
             // Define click listener for the ViewHolder's View.
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(v.getContext(), "Item clicked: " + itemTitle.getText(), Toast.LENGTH_SHORT).show();
-                    intent = new Intent(view.getContext(), ItemSliderActivity.class);
-                    view.getContext().startActivity(intent);
-                }
-            });
+            this.view = view;
             itemImage = view.findViewById(R.id.item_image_id);
             itemTitle = view.findViewById(R.id.item_title_id);
             itemPrice = view.findViewById(R.id.item_price_id);
@@ -99,7 +89,13 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdap
             itemImage.setImageResource(R.drawable.macbook_pro);
             itemTitle.setText(item.getTitle());
             itemPrice.setText("Price: $" + item.getPrice());
-            intent.putExtra("position", item.getId());
+
+            // set button handler
+            view.setOnClickListener(v -> {
+                Intent intent = new Intent(view.getContext(), ItemSliderActivity.class);
+                intent.putExtra("position", item.getId() - 1);
+                view.getContext().startActivity(intent);
+            });
         }
     }
 

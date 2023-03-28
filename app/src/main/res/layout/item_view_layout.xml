@@ -39,7 +39,7 @@
             android:id="@+id/item_price_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Price: $122"
+            android:text="Item 1 Title"
             android:textSize="12sp"
             android:textStyle="bold" />
 

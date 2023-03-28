@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 public class CartDAO implements DAO<CartItem> {
-    private final Map<Integer, CartItem> cartItemMap;
+    private static final Map<Integer, CartItem> cartItemMap;
 
-    public CartDAO() {
+    static {
         cartItemMap = new HashMap<>();
     }
 
@@ -23,11 +23,15 @@ public class CartDAO implements DAO<CartItem> {
 
     @Override
     public boolean addOrUpdate(CartItem cartItem) {
-        if (cartItemMap.containsKey(cartItem.getItem().getId())) {
-            cartItemMap.put(cartItem.getItem().getId(), cartItem);
+        int itemId = cartItem.getItem().getId();
+        if (cartItemMap.containsKey(itemId)) {
+            // Item already in cart, increment quantity by 1
+            CartItem existingItem = cartItemMap.get(itemId);
+            existingItem.setQuantity(existingItem.getQuantity() + 1);
             return true;
         } else {
-            cartItemMap.put(cartItem.getItem().getId(), cartItem);
+            // Item not in cart, add it with quantity 1
+            cartItemMap.put(itemId, cartItem);
             return false;
         }
     }
