@@ -1,9 +1,11 @@
 package com.shopping.app.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shopping.app.R;
+import com.shopping.app.activity.ItemSliderActivity;
+import com.shopping.app.activity.RegisterActivity;
 import com.shopping.app.adapder.CartItemsRecyclerAdapter;
 import com.shopping.app.adapder.ItemsRecyclerAdapter;
 import com.shopping.app.dao.CartDAO;
@@ -35,6 +39,13 @@ public class CartFragment extends Fragment {
         recyclerView = view.findViewById(R.id.cart_item_recyclyer_id);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new CartItemsRecyclerAdapter(new CartDAO().getAll()));
+
+        // checkout button
+        Button checkout = view.findViewById(R.id.checkout_btn_id);
+        checkout.setOnClickListener(e ->{
+            Intent intent = new Intent(view.getContext(), RegisterActivity.class);
+            view.getContext().startActivity(intent);
+        });
 
         return view;
     }
