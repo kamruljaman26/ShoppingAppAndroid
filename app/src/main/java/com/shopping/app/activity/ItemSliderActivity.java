@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 import com.shopping.app.R;
-import com.shopping.app.dao.ItemsDAO;
+import com.shopping.app.database.ItemsDatabase;
 import com.shopping.app.fragments.PagerItemFragment;
 import com.shopping.app.model.Item;
 
@@ -32,9 +32,9 @@ public class ItemSliderActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle("Back");
 
         // Get the selected item and position from the intent
-        ItemsDAO itemsDAO = new ItemsDAO();
-        itemsDAO.loadDummyData();
-        List<Item> itemList = itemsDAO.getAll();
+        ItemsDatabase itemsDatabase = new ItemsDatabase();
+        itemsDatabase.loadDummyData();
+        List<Item> itemList = itemsDatabase.getAll();
         int selectedPosition = getIntent().getIntExtra("position", 0);
 
         // Set up the ViewPager with custom PagerAdapter

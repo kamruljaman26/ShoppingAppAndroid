@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.shopping.app.R;
 import com.shopping.app.activity.RegisterActivity;
 import com.shopping.app.adapder.CartItemsRecyclerAdapter;
-import com.shopping.app.dao.CartDAO;
+import com.shopping.app.database.CartDatabase;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class CartFragment extends Fragment {
@@ -33,7 +33,7 @@ public class CartFragment extends Fragment {
         // recycler view
         recyclerView = view.findViewById(R.id.cart_item_recyclyer_id);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(new CartItemsRecyclerAdapter(new CartDAO().getAll()));
+        recyclerView.setAdapter(new CartItemsRecyclerAdapter(new CartDatabase().getAll()));
 
         // checkout button
         Button checkout = view.findViewById(R.id.checkout_btn_id);
@@ -48,7 +48,7 @@ public class CartFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        recyclerView.setAdapter(new CartItemsRecyclerAdapter(new CartDAO().getAll()));
+        recyclerView.setAdapter(new CartItemsRecyclerAdapter(new CartDatabase().getAll()));
         updateTotal();
     }
 
@@ -56,7 +56,7 @@ public class CartFragment extends Fragment {
 
         // calculate cart total
         AtomicReference<Double> total = new AtomicReference<>((double) 0);
-        new CartDAO().getAll().forEach(c -> {
+        new CartDatabase().getAll().forEach(c -> {
             total.updateAndGet(v -> new Double((double) (v + c.getItem().getPrice() * c.getQuantity())));
         });
 

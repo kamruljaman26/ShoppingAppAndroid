@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.shopping.app.R;
 import com.shopping.app.adapder.ItemsRecyclerAdapter;
-import com.shopping.app.dao.ItemsDAO;
+import com.shopping.app.database.ItemsDatabase;
 
 public class ItemsFragment extends Fragment {
 
@@ -25,10 +25,10 @@ public class ItemsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewId);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
-        ItemsDAO itemsDAO = new ItemsDAO();
-        itemsDAO.loadDummyData();
+        ItemsDatabase itemsDatabase = new ItemsDatabase();
+        itemsDatabase.loadDummyData();
 
-        recyclerView.setAdapter(new ItemsRecyclerAdapter(itemsDAO.getAll()));
+        recyclerView.setAdapter(new ItemsRecyclerAdapter(itemsDatabase.getAll()));
 
         return view;
     }

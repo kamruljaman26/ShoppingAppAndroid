@@ -1,5 +1,6 @@
 package com.shopping.app.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +13,9 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.shopping.app.R;
-import com.shopping.app.dao.CartDAO;
+import com.shopping.app.database.CartDatabase;
 import com.shopping.app.model.CartItem;
 import com.shopping.app.model.Item;
-import com.shopping.app.util.Util;
 
 import java.util.Locale;
 
@@ -47,7 +47,7 @@ public class PagerItemFragment extends Fragment {
         Button addToCartButton = view.findViewById(R.id.add_to_card_btn_id);
 
         // Load the item data into the views
-        imageView.setImageResource(Util.nameToDrawable(item.getImage(),view.getContext()));
+        imageView.setImageResource(nameToDrawable(item.getImage(),view.getContext()));
         titleTextView.setText(item.getTitle());
         priceTextView.setText(String.format(Locale.getDefault(), "$%.2f", item.getPrice()));
         descriptionTextView.setText(item.getDescription());
@@ -55,11 +55,17 @@ public class PagerItemFragment extends Fragment {
         // Set button listener
         addToCartButton.setOnClickListener(v -> {
             CartItem cartItem = new CartItem(item, 1);
-            new CartDAO().addOrUpdate(cartItem);
+            new CartDatabase().addOrUpdate(cartItem);
             Toast.makeText(view.getContext(), "Added to cart", Toast.LENGTH_SHORT).show();
         });
 
         return view;
+    }
+
+    // This function based on file name return image Identifier id
+    public static int nameToDrawable(String name, Context context) {
+        String resourceName = name.substring(0, name.lastIndexOf('.')).toLowerCase().replaceAll("[^a-z0-9_]", "_");
+        return context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
     }
 }
 

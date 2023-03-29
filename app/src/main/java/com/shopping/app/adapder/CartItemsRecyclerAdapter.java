@@ -1,5 +1,6 @@
 package com.shopping.app.adapder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,6 @@ import com.shopping.app.R;
 import com.shopping.app.activity.ItemSliderActivity;
 import com.shopping.app.model.CartItem;
 import com.shopping.app.model.Item;
-import com.shopping.app.util.Util;
 
 import java.util.List;
 
@@ -82,7 +82,7 @@ public class CartItemsRecyclerAdapter extends RecyclerView.Adapter<CartItemsRecy
 
         public void bindData(CartItem item) {
             // Set data for each item view in the RecyclerView
-            itemImage.setImageResource(Util.nameToDrawable(item.getItem().getImage(), view.getContext()));
+            itemImage.setImageResource(nameToDrawable(item.getItem().getImage(), view.getContext()));
             itemTitle.setText(item.getItem().getTitle());
             itemPrice.setText("Price: $" + item.getItem().getPrice());
 
@@ -92,6 +92,12 @@ public class CartItemsRecyclerAdapter extends RecyclerView.Adapter<CartItemsRecy
                 intent.putExtra("position", item.getItem().getId() - 1);
                 view.getContext().startActivity(intent);
             });
+        }
+
+        // This function based on file name return image Identifier id
+        public int nameToDrawable(String name, Context context) {
+            String resourceName = name.substring(0, name.lastIndexOf('.')).toLowerCase().replaceAll("[^a-z0-9_]", "_");
+            return context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
         }
     }
 
