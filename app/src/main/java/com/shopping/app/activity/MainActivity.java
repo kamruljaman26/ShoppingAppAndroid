@@ -3,7 +3,10 @@ package com.shopping.app.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
 import com.shopping.app.R;
@@ -15,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.R) { // Build.VERSION_CODES.R corresponds to API level 30
+//            viewToHide.setVisibility(View.GONE);
+        }
 
         // init tab layout
         TabLayout tabLayout = findViewById(R.id.tabLayoutId);

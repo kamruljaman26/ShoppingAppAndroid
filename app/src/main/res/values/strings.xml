@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Standard Electronics</string>
+    <string name="app_name">Automatic Standard Motors</string>
+    <string name="app_title">Automatic Standard Motors</string>
+
     <string name="view_pager_description">Swipe left or right to switch between tabs</string>
 
     <string name="app_description">Online Shopping Canada has never been easier. Standard Electronics is the best
@@ -12,6 +14,5 @@
     </string>
 
     <string name="footer_copyright">© Standard Electronics Ltd 2023</string>
-    <string name="app_title">Standard Electronic</string>
     <string name="thank_you_message">Thank you for registering!\nCheckout not yet functional!</string>
 </resources>

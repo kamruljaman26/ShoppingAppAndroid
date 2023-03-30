@@ -55,16 +55,16 @@ public class ItemsDatabase {
 
     // here we will load all dummy items data for Item
     public void loadDummyData() {
-        addOrUpdate(new Item(1, "Macbook Pro M1 16gb", "macbook_pro.jpeg", 1099.99, "Macbook Pro M1 features a 6.7-inch Super Retina XDR display and A14 Bionic chip."));
-        addOrUpdate(new Item(2, "Iphone 14 Pro Max", "iphone_14_pro.jpeg", 1199.99, "The iPhone 12 Pro Max features a 6.7-inch Super Retina XDR display and A14 Bionic chip"));
-        addOrUpdate(new Item(3, "Sony WH-1000XM4", "macbook_pro.jpeg", 349.99, "The Sony WH-1000XM4 is a noise-cancelling wireless headphone with up to 30 hours of battery life."));
-        addOrUpdate(new Item(4, "DJI Mavic Air 2", "macbook_pro.jpeg", 799.99, "The DJI Mavic Air 2 is a foldable drone with a 48MP camera and 4K video recording."));
-        addOrUpdate(new Item(5, "Logitech MX Master 3", "iphone_14_pro.jpeg", 99.99, "The Logitech MX Master 3 is a wireless mouse with customizable buttons and a 4000 DPI sensor."));
-        addOrUpdate(new Item(6, "Bose QuietComfort Earbuds", "macbook_pro.jpeg", 279.99, "The Bose QuietComfort Earbuds are wireless noise-cancelling earbuds with up to 6 hours of battery life."));
-        addOrUpdate(new Item(7, "Apple iPad Pro (2021)", "macbook_pro.jpeg", 1099.99, "The iPad Pro (2021) features an M1 chip and a Liquid Retina XDR display."));
-        addOrUpdate(new Item(8, "Sony A7 III", "macbook_pro.jpeg", 1999.99, "The Sony A7 III is a full-frame mirrorless camera with 24.2MP sensor and 4K video recording."));
-        addOrUpdate(new Item(9, "Samsung Odyssey G7", "iphone_14_pro.jpeg", 799.99, "The Samsung Odyssey G7 is a 27-inch curved gaming monitor with a 240Hz refresh rate."));
-        addOrUpdate(new Item(10, "Microsoft Surface Laptop 4", "macbook_pro.jpeg", 1299.99, "The Microsoft Surface Laptop 4 features a 13.5-inch touchscreen display and 11th Gen Intel Core processors."));
+        addOrUpdate(new Item(1, "Tesla Model S", "tesla_model_s.jpeg", 79999.99, "The Tesla Model S is an all-electric luxury sedan with a range of up to 520 miles."));
+        addOrUpdate(new Item(2, "Porsche 911 Carrera", "porsche_911.jpeg", 99999.99, "The Porsche 911 Carrera is a high-performance sports car with a 3.0-liter twin-turbocharged engine."));
+        addOrUpdate(new Item(3, "Ford Mustang Mach-E", "tesla_model_s.jpg", 42999.99, "The Ford Mustang Mach-E is an electric SUV with a range of up to 300 miles and fast-charging capabilities."));
+        addOrUpdate(new Item(4, "Audi e-tron GT", "tesla_model_s.jpg", 129999.99, "The Audi e-tron GT is an electric sports car with a 93.4 kWh battery and a range of up to 238 miles."));
+        addOrUpdate(new Item(5, "Jeep Grand Cherokee L", "porsche_911.jpg", 39999.99, "The Jeep Grand Cherokee L is a three-row SUV with a 3.6-liter V6 engine and advanced off-road capabilities."));
+        addOrUpdate(new Item(6, "Chevrolet Corvette Stingray", "tesla_model_s.jpg", 59999.99, "The Chevrolet Corvette Stingray is a high-performance sports car with a 6.2-liter V8 engine and a top speed of 194 mph."));
+        addOrUpdate(new Item(7, "BMW M5 Competition", "porsche_911.jpg", 109999.99, "The BMW M5 Competition is a high-performance luxury sedan with a 4.4-liter V8 engine and a top speed of 190 mph."));
+        addOrUpdate(new Item(8, "Mercedes-Benz S-Class", "tesla_model_s.jpg", 129999.99, "The Mercedes-Benz S-Class is a luxury sedan with a spacious and refined interior and advanced technology features."));
+        addOrUpdate(new Item(9, "Lamborghini Huracan Evo", "porsche_911.jpg", 299999.99, "The Lamborghini Huracan Evo is a high-performance sports car with a 5.2-liter V10 engine and a top speed of 202 mph."));
+        addOrUpdate(new Item(10, "Toyota RAV4 Hybrid", "tesla_model_s.jpg", 33999.99, "The Toyota RAV4 Hybrid is a fuel-efficient SUV with a 2.5-liter hybrid engine and a range of up to 580 miles."));
     }
 }
 
